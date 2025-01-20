@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		4F910F022D3E984C0027692A /* LeapYearChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeapYearChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F910F022D3E984C0027692A /* LeapYearChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LeapYearChecker.app; path = "/Users/ANguyenho/Computer Science/LeapYearChecker/build/Debug-iphoneos/LeapYearChecker.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,16 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				4F910F042D3E984C0027692A /* LeapYearChecker */,
-				4F910F032D3E984C0027692A /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		4F910F032D3E984C0027692A /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4F910F022D3E984C0027692A /* LeapYearChecker.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,7 +86,7 @@
 			mainGroup = 4F910EF92D3E984C0027692A;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 4F910F032D3E984C0027692A /* Products */;
+			productRefGroup = 4F910EF92D3E984C0027692A;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

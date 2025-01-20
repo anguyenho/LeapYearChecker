@@ -11,7 +11,7 @@ import SwiftUI
 struct LeapYearCheckerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LeapYearCheckerView()
         }
     }
 }
