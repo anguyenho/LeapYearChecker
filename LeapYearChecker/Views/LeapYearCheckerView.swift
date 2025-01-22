@@ -10,66 +10,83 @@ import SwiftUI
 struct LeapYearCheckerView: View {
     
     // MARK: Stored properties
-    // What year the user has stated
     @State private var year = ""
-    
-    // Result from guess
     @State private var result = ""
-    
-    // Years guessed
     @State private var yearsGuessed: [Int] = []
-    
-    // Calculation things
-    
     
     // MARK: Computed properties
     var body: some View {
         NavigationStack {
             VStack {
+                // Input field
+                TextField("Enter year", text: $year)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .keyboardType(.numberPad)
+                    .padding()
                 
+                // my buttons
                 HStack {
-                    TextField("Enter year", text: $year)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    
-                }
-                .padding()
-                HStack {
-                    Button(action: {checkGuess()}) {
+                    Button(action: { checkGuess() }) {
                         Text("Check")
                             .padding(9)
                             .foregroundColor(.white)
                             .background(Color.blue)
                             .cornerRadius(10)
-                        
-                        Button(action: {reset()}) {
-                            Text("Reset")
-                                .padding(9)
-                                .foregroundStyle(.white)
-                                .background(Color.blue)
-                        }
                     }
-                    HStack {
-                        
+                    
+                    Button(action: { reset() }) {
+                        Text("Reset")
+                            .padding(9)
+                            .foregroundColor(.white)
+                            .background(Color.red)
+                            .cornerRadius(10)
                     }
                 }
                 .padding()
-                .navigationTitle("Leap Year Checker")
+                
+                // Result display
+                Text(result)
+                    .font(.headline)
+                    .padding()
+                
+                // List of guessed years
+                List(yearsGuessed, id: \.self) { guessedYear in
+                    Text("\(guessedYear)")
+                }
+                
+                Spacer()
             }
+            .navigationTitle("Leap Year Checker")
         }
     }
     
     // MARK: Functions
     func checkGuess() {
-        if year % 400 == 0 {
-        } print("\(year) is a leap year")
+        // Ensure the year is a valid integer
+        guard let yearInt = Int(year) else {
+            result = "Please enter a valid year."
+            return
+        }
+        
+        // Leap year logic
+        if (yearInt % 4 == 0 && yearInt % 100 != 0) || (yearInt % 400 == 0) {
+            result = "\(yearInt) is a leap year!"
+        } else {
+            result = "\(yearInt) is not a leap year."
+        }
+        
+        // Add to guessed years
+        yearsGuessed.append(yearInt)
     }
     
     func reset() {
         // Reset everything
+        year = ""
+        result = ""
         yearsGuessed.removeAll()
     }
-    
-    #Preview {
-        LeapYearCheckerView()
-    }
+}
+
+#Preview {
+    LeapYearCheckerView()
 }
