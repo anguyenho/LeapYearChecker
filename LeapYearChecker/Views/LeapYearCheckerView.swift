@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct LeapYearCheckerView: View {
+    @State private var year = ""
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+           
+            HStack {
+                TextField("Enter year", text: $year)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+            }
         }
         .padding()
     }
@@ -22,3 +24,4 @@ struct LeapYearCheckerView: View {
 #Preview {
     LeapYearCheckerView()
 }
+
