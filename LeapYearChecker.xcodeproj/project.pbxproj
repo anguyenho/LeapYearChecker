@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		4F910F022D3E984C0027692A /* LeapYearChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = LeapYearChecker.app; path = "/Users/ANguyenho/Computer Science/LeapYearChecker/build/Debug-iphoneos/LeapYearChecker.app"; sourceTree = "<absolute>"; };
+		4F38D59B2D413A1E0043E006 /* LeapYearChecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeapYearChecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -33,6 +33,7 @@
 			isa = PBXGroup;
 			children = (
 				4F910F042D3E984C0027692A /* LeapYearChecker */,
+				4F38D59B2D413A1E0043E006 /* LeapYearChecker.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,7 +59,7 @@
 			packageProductDependencies = (
 			);
 			productName = LeapYearChecker;
-			productReference = 4F910F022D3E984C0027692A /* LeapYearChecker.app */;
+			productReference = 4F38D59B2D413A1E0043E006 /* LeapYearChecker.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
