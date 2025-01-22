@@ -13,8 +13,11 @@ struct LeapYearCheckerView: View {
     // What year the user has stated
     @State private var year = ""
     
+    // Result from guess
+    @State private var result = ""
+    
     // Years guessed
-    @State var yearsGuessed: [Int] = []
+    @State private var yearsGuessed: [Int] = []
     
     // MARK: Computed properties
     var body: some View {
@@ -42,16 +45,17 @@ struct LeapYearCheckerView: View {
                                 .background(Color.red)
                                 .cornerRadius(10)
                         }
-                        HStack {
-                            // Show the users input
-                            Text("History")
-                            ScrollView {
-                                VStack(spacing: 5) {
-                                    ForEach(yearsGuessed, id: \.self) { year in
-                                        Text("\(year)")
-                                        Divider()
                                     }
                                 }
+                HStack {
+                    // Show the users input
+                    Text("History")
+                        .font(.title2)
+                    ScrollView {
+                        VStack(spacing: 5) {
+                            ForEach(yearsGuessed, id: \.self) { year in
+                                Text("\(year)")
+                                Divider()
                             }
                             
                             
@@ -59,10 +63,16 @@ struct LeapYearCheckerView: View {
                             
                             
                         }
+                        HStack {
+                            // Print result
+                            if(year % 400 == 0, (year % 4 == 0, year % 100 == 0)):
+                                    print("year is a leap year")
+                                else:
+                                    print("year is not a leap year")
+                        }
                     }
                     
                 }
-                Spacer()
             }
             .padding()
             .navigationTitle("Leap Year Checker")
@@ -71,7 +81,7 @@ struct LeapYearCheckerView: View {
 }
 
 // MARK: Functions
-func isLeapYear(_ year: Int) -> Bool {
+func checkYear(_ year: Int) -> Bool {
     if year % 400 == 0 {
         return true
     } else if year % 100 == 0 {
@@ -81,10 +91,6 @@ func isLeapYear(_ year: Int) -> Bool {
     } else {
         return false
     }
-}
-
-func reset() {
-    yearsGuessed.removeAll()
 }
 
 
